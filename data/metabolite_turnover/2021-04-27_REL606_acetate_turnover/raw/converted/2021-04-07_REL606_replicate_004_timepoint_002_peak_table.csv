@@ -1,0 +1,22 @@
+#
+# 2021-04-07_REL606_replicate_004_timepoint_002
+# ------------------------------
+# Acquired: 4/28/2021 9:41:41 PM
+# Converted: 04/29/2021 11:04:21 AM
+# Vial: 29
+# Injection Volume: 20 uL
+# Sample ID: 002
+#
+# Detector B
+# ---------------------
+# Acquisition Interval: 500 ms
+# Intensity Units: mV
+# Intensity Multiplier: 0.001
+#
+peak_idx,retention_time,arrival_time,departure_time,area,height,detector
+1,10.925,10.458,11.567,228481,13561,B
+2,13.952,12.607999999999999,14.267000000000001,1553344,42058,B
+3,14.492,14.267000000000001,15.125,157398,7296,B
+4,15.284,15.125,16.175,6195,233,B
+5,19.23,18.9,19.733,2359,102,B
+6,25.128,24.383000000000003,26.241999999999997,321469,10833,B

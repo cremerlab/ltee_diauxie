@@ -1,7 +1,19 @@
 ## `data`
 
-This directory houses all small (< 50 MB) data sets that are a result of individual experiments and/or simulations. Depending on the type of data collected, you may want to split them up based on file type.
+This directory houses all small (< 100 MB) data sets that are a result of
+individual experiments and/or simulations. They are partitioned into the following 
+categories
 
-If possible, data sets from individual experiments should be compiled in a long-form tidy format. This is important not only for your analysis, but for others who wish to reproduce your work. While you may have an intimate knowledge of your data and experimental structure, it may not be obvious to anyone else. It is much easier if you can combine the individual data sets into as few files as possible so only one or two files have to be read to perform the analysis and generate the figures. 
+* **`calibration/`**: This includes all experiments performed as calibration to 
+permit quantitative characterization. This includes calibration of the HPLC to 
+tie peak area to concentration.
 
-This is **not** a place to store all of your large (> 50 MB) data files, such as images. For accessibility of these large data sets, there are myriad online data repositories such as [Zenodo](https://zenodo.org) which provide free storage and DOI generation. In addition, you should have all of your data backed up locally with redundancy.
+* **`growth_curves/`**: This includes all data for the determination of growth 
+rates and/or lag times. This includes optical density meeasurements taken by 
+hand at the spectrophotometer as well as measurements on a plate reader. 
+
+* **`metabolite_turnover/`**: This includes all HPLC data for the measurement 
+of the consumption and/or production of metabolites. 
+
+* **`literature/`**: This includes all data from the literature which is used 
+appropariately with citation.
