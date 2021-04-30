@@ -1,5 +1,4 @@
 #%% 
-sys.path.insert(0, '../../../../')
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -8,7 +7,7 @@ import cremerlab.growth
 colors, palette = diaux.viz.matplotlib_style()
 
 # Define the data path and load raw data
-DATA_PATH = '../../../data/metabolite_turnover/2021-04-04_REL606_glucose_turnover'
+DATA_PATH = '../../../data/growth_curves/2021-04-04_REL606_glucose_growth'
 raw_data = pd.read_csv(f'{DATA_PATH}/raw/2021-04-04_REL606_glucose_growth_curve.csv')
 data, params, plot = cremerlab.growth.infer_growth_rate(raw_data, 
                                                   od_bounds=[0.039, 0.41],
@@ -37,6 +36,8 @@ data = pd.concat(dfs, sort=False)
 data.drop(columns=['sampled'], inplace=True)
 
 # Save the pruned data and growth rate parameters
-data.to_csv(f'{DATA_PATH}/processed/2021-04-04_REL606_glucose_growth.csv')
-params.to_csv(f'{DATA_PATH}/processed/2021-04-04_REL606_glucose_growth_parameters.csv')
+data.to_csv(f'{DATA_PATH}/processed/2021-04-04_REL606_glucose_growth.csv',
+            index=False)
+params.to_csv(f'{DATA_PATH}/processed/2021-04-04_REL606_glucose_growth_parameters.csv',
+                index=False)
 #%%

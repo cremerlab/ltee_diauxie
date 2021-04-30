@@ -1,7 +1,6 @@
 #%% 
 import numpy as np
 import pandas as pd 
-import matplotlib.pyplot as plt
 import altair as alt
 from altair_saver import save
 import diaux.viz
@@ -13,7 +12,7 @@ _ = diaux.viz.altair_style()
 DATA_PATH = '../../../data/growth_curves/2021-04-27_REL606_acetate_growth'
 raw_data = pd.read_csv(f'{DATA_PATH}/raw/2021-04-27_REL606_acetate_growth.csv')
 data, params = cremerlab.growth.infer_growth_rate(raw_data, 
-                                                  od_bounds=[0.09, 0.4],
+                                                  od_bounds=[0.04, 0.4],
                                                   groupby=['replicate'],
                                                   viz=False)
 _data = []
@@ -78,7 +77,17 @@ for g, d in data.groupby(['replicate']):
 data = pd.concat(dfs, sort=False)
 data.drop(columns=['sampled'], inplace=True)
 
+# Add other identifiers
+data['strain'] = 'REL606'
+data['carbon_source'] = 'acetate'
+data['medium_base'] = 'DM'
+data['date'] = '2021-04-27'
+
 # Save the pruned data and growth rate parameters
-data.to_csv(f'{DATA_PATH}/processed/2021-04-27_REL606_acetate_growth.csv')
-params.to_csv(f'{DATA_PATH}/processed/2021-04-27_REL606_acetate_growth_parameters.csv')
+data.to_csv(f'{DATA_PATH}/processed/2021-04-27_REL606_acetate_growth.csv',
+                index=False)
+params.to_csv(f'{DATA_PATH}/processed/2021-04-27_REL606_acetate_growth_parameters.csv',
+                index=False)
 #%%
+
+# %%

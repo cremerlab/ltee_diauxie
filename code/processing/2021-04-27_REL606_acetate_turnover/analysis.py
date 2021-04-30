@@ -53,19 +53,10 @@ chart = alt.Chart(rel_peaks, width=250, height=250
                     title='signal relative to phosphate'),
             color=alt.Color('compound:N', title='compound')
 ).facet(column='replicate:N')
-save(chart, './output/2021-04-27_REL606_compound_area_variation_normalized.png')
+# save(chart, './output/2021-04-27_REL606_compound_area_variation_normalized.png')
 chart
 
 #%% 
-# Set up the calibration curve for the data relative to the phosphate peak
-# rel_cal_peaks = []
-# for g, d in cal_peaks.groupby(['carbon_conc_mM']):
-#     phos_peak = d[d['compound']=='phosphate']['area'].values[0]
-#     d['rel_area_phosphate'] = d['area'].values / phos_peak
-#     rel_cal_peaks.append(d)
-# rel_cal_peaks = pd.concat(rel_cal_peaks, sort=False)
-# rel_cal_peaks = rel_cal_peaks[rel_cal_peaks['compound'].isin(['glucose', 'acetate'])]
-
 cal_peaks = cal_peaks[cal_peaks['compound']=='acetate']
 
 # Perform the estimate
@@ -151,26 +142,8 @@ ac_uncertainty = ac_fit_base.mark_area(opacity=0.25, clip=True).encode(
 ac_best = ac_fit_base.mark_line(size=2, clip=True).encode(
                         y=alt.Y('conc_mM:Q', title='acetate concentration [mM]'))
 
-
 ac_layer = (ac_uncertainty + ac_best + ac_points).properties(
-                title=f"acetate consumption = {np.abs(yield_params['acetate']['slope']:0.2f)} ± {yield_params['acetate']['err']:0.2f} mM / OD")
+                title=f"acetate consumption = {np.abs(yield_params['acetate']['slope']):0.2f} ± {yield_params['acetate']['err']:0.2f} mM / OD")
 
-# save(ac_layer, './output/2021-04-27_REL606_acetate_turnover.pdf')
-
-ac_layer
-#%%
-points = alt.Chart(samp_data, width=350, height=300).mark_point(size=80).encode(
-            x=alt.X('od_600nm:Q', title='optical density [a.u.]'),
-            y=alt.Y('conc_mM:Q', title='concentration [mM]'),
-            color=alt.Color('replicate:N', title='biological replicate'),
-            facet=alt.Facet('compound:N', header=alt.Header(labelFontSize=15)))
-
-fit = alt.Chart(fit_df, width=350, height=300).mark_line(color=colors['black']).encode(
-            x=alt.X('od_600nm:Q', title='optical density [a.u.]'),
-            y=alt.Y('conc_mM:Q', title='concentration [mM]'),
-            facet=alt.Facet('compound:N', header=alt.Header(labelFontSize=15)))
-
-points + fit
+save(ac_layer, './output/2021-04-27_REL606_acetate_turnover.pdf')
 # %%
-
-# Load the calibration data
