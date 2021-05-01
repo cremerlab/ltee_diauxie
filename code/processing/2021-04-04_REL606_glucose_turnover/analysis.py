@@ -11,11 +11,11 @@ colors, palette = diaux.viz.altair_style()
 
 # %%
 # Load the various data sets
-DATA_PATH = '../../../../data/metabolite_turnover/2021-04-04_REL606_glucose_turnover/processed/'
+DATA_PATH = '../../../data/metabolite_turnover/2021-04-04_REL606_glucose_turnover/processed/'
 peaks = pd.read_csv(f'{DATA_PATH}/2021-04-04_REL606_glucose_peak_table.csv')
-cal_peaks = pd.read_csv('../../../../data/hplc_calibration/2021-04-05_NC_DM_calibration/processed/2021-04-05_NC_DM_carbon_source_calibration.csv')
+cal_peaks = pd.read_csv('../../../data/calibration/2021-04-05_hplc_calibration/processed/2021-04-05_NC_DM_carbon_source_calibration.csv')
 cal_peaks = cal_peaks[cal_peaks['buffer_base']=='DM']
-growth = pd.read_csv(f'{DATA_PATH}/2021-04-04_REL606_glucose_growth.csv')
+growth = pd.read_csv(f'../../../data/growth_curves/2021-04-04_REL606_glucose_growth/processed/2021-04-04_REL606_glucose_growth.csv')
 
 #%%
 # For the peaks, map time point to OD
@@ -44,6 +44,13 @@ for g, d in peaks.groupby(['replicate', 'time_idx']):
     d['rel_area_phosphate'] = d['area'].values / phos_peak
     rel_peaks.append(d)
 rel_peaks = pd.concat(rel_peaks, sort=False)
+rel_peaks['strain'] = 'REL606'
+rel_peaks['carbon_source'] = 'glucose'
+rel_peaks['medium_base'] = 'DM'
+rel_peaks['date'] = '2021-04-04'
+rel_peaks.to_csv(f'../../../data/metabolite_turnover/2021-04-04_REL606_glucose_turnover/processed/2021-04-04_REL606_glucose_turnover_relative_areas.csv', 
+                index=False)
+#
 # %%
 chart = alt.Chart(rel_peaks, width=250, height=250
                  ).mark_point(size=80, opacity=0.75).encode(

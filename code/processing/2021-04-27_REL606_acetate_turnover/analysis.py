@@ -45,6 +45,12 @@ for g, d in peaks.groupby(['replicate', 'time_idx']):
     d['rel_area_phosphate'] = d['area'].values / phos_peak
     rel_peaks.append(d)
 rel_peaks = pd.concat(rel_peaks, sort=False)
+rel_peaks['strain'] = 'REL606'
+rel_peaks['carbon_source'] = 'acetate'
+rel_peaks['medium_base'] = 'DM'
+rel_peaks['date'] = '2021-04-27'
+rel_peaks.to_csv(f'../../../data/metabolite_turnover/2021-04-27_REL606_acetate_turnover/processed/2021-04-27_REL606_acetate_turnover_relative_areas.csv', 
+                index=False)
 # %%
 chart = alt.Chart(rel_peaks, width=250, height=250
                  ).mark_point(size=80, opacity=0.75).encode(
