@@ -59,31 +59,36 @@ using stan::math::pow;
 stan::math::profile_map profiles__;
 static int current_statement__= 0;
 static const std::vector<string> locations_array__ = {" (found before start of program)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 19, column 4 to column 30)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 20, column 4 to column 30)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 21, column 4 to column 30)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 24, column 4 to column 33)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 25, column 4 to column 36)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 26, column 4 to column 24)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 27, column 4 to column 36)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 30, column 4 to column 26)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 31, column 4 to column 26)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 34, column 4 to column 30)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 69, column 4 to column 80)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 40, column 11 to column 18)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 40, column 4 to column 80)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 43, column 4 to column 31)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 44, column 4 to column 31)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 45, column 4 to column 31)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 48, column 4 to column 34)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 49, column 4 to column 34)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 50, column 4 to column 39)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 51, column 4 to column 39)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 54, column 4 to column 60)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 55, column 4 to column 60)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 58, column 4 to column 31)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 61, column 4 to column 82)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 64, column 4 to column 94)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 24, column 4 to column 26)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 25, column 4 to column 26)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 26, column 4 to column 35)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 29, column 4 to column 38)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 30, column 4 to column 41)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 31, column 4 to column 29)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 32, column 4 to column 41)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 35, column 4 to column 31)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 36, column 4 to column 31)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 39, column 4 to column 35)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 43, column 4 to column 77)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 44, column 4 to column 143)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 45, column 4 to column 62)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 77, column 4 to column 80)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 78, column 4 to column 75)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 79, column 4 to column 75)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 80, column 4 to column 76)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 81, column 4 to column 76)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 51, column 4 to column 36)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 52, column 4 to column 36)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 53, column 4 to column 36)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 56, column 4 to column 39)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 57, column 4 to column 39)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 58, column 4 to column 44)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 59, column 4 to column 44)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 62, column 4 to column 75)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 63, column 4 to column 75)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 66, column 4 to column 36)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 69, column 4 to column 102)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 72, column 4 to column 113)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 3, column 4 to column 19)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 4, column 4 to column 25)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 5, column 4 to column 25)",
@@ -97,9 +102,15 @@ static const std::vector<string> locations_array__ = {" (found before start of p
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 13, column 4 to column 45)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 14, column 20 to column 27)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 14, column 4 to column 45)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 30, column 11 to column 12)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 31, column 11 to column 12)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 69, column 11 to column 18)"};
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 18, column 11 to column 18)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 18, column 4 to column 85)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 19, column 11 to column 18)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 19, column 4 to column 104)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 35, column 11 to column 12)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 36, column 11 to column 12)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 77, column 11 to column 18)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 78, column 11 to column 12)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 79, column 11 to column 12)"};
 
 
 
@@ -114,6 +125,8 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
   Eigen::Matrix<double, -1, 1> calib_rel_areas;
   Eigen::Matrix<double, -1, 1> optical_density;
   Eigen::Matrix<double, -1, 1> yield_rel_areas;
+  Eigen::Matrix<double, -1, 1> centered_conc;
+  Eigen::Matrix<double, -1, 1> centered_rel_area;
  
  public:
   ~hierarchical_yield_coefficient_model() { }
@@ -142,61 +155,61 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       pos__ = std::numeric_limits<int>::min();
       
       pos__ = 1;
-      current_statement__ = 26;
+      current_statement__ = 31;
       context__.validate_dims("data initialization","J","int",
           context__.to_vec());
       J = std::numeric_limits<int>::min();
       
-      current_statement__ = 26;
+      current_statement__ = 31;
       J = context__.vals_i("J")[(1 - 1)];
-      current_statement__ = 26;
-      current_statement__ = 26;
+      current_statement__ = 31;
+      current_statement__ = 31;
       check_greater_or_equal(function__, "J", J, 1);
-      current_statement__ = 27;
+      current_statement__ = 32;
       context__.validate_dims("data initialization","N_yield","int",
           context__.to_vec());
       N_yield = std::numeric_limits<int>::min();
       
-      current_statement__ = 27;
+      current_statement__ = 32;
       N_yield = context__.vals_i("N_yield")[(1 - 1)];
-      current_statement__ = 27;
-      current_statement__ = 27;
+      current_statement__ = 32;
+      current_statement__ = 32;
       check_greater_or_equal(function__, "N_yield", N_yield, 1);
-      current_statement__ = 28;
+      current_statement__ = 33;
       context__.validate_dims("data initialization","N_calib","int",
           context__.to_vec());
       N_calib = std::numeric_limits<int>::min();
       
-      current_statement__ = 28;
+      current_statement__ = 33;
       N_calib = context__.vals_i("N_calib")[(1 - 1)];
-      current_statement__ = 28;
-      current_statement__ = 28;
+      current_statement__ = 33;
+      current_statement__ = 33;
       check_greater_or_equal(function__, "N_calib", N_calib, 1);
-      current_statement__ = 29;
+      current_statement__ = 34;
       validate_non_negative_index("idx", "N_yield", N_yield);
-      current_statement__ = 30;
+      current_statement__ = 35;
       context__.validate_dims("data initialization","idx","int",
           context__.to_vec(N_yield));
       idx = std::vector<int>(N_yield, std::numeric_limits<int>::min());
       
-      current_statement__ = 30;
+      current_statement__ = 35;
       assign(idx, nil_index_list(), context__.vals_i("idx"),
         "assigning variable idx");
-      current_statement__ = 30;
+      current_statement__ = 35;
       for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
-        current_statement__ = 30;
-        current_statement__ = 30;
+        current_statement__ = 35;
+        current_statement__ = 35;
         check_greater_or_equal(function__, "idx[sym1__]", idx[(sym1__ - 1)],
                                1);}
-      current_statement__ = 30;
+      current_statement__ = 35;
       for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
-        current_statement__ = 30;
-        current_statement__ = 30;
+        current_statement__ = 35;
+        current_statement__ = 35;
         check_less_or_equal(function__, "idx[sym1__]", idx[(sym1__ - 1)], J);
       }
-      current_statement__ = 31;
+      current_statement__ = 36;
       validate_non_negative_index("calib_conc", "N_calib", N_calib);
-      current_statement__ = 32;
+      current_statement__ = 37;
       context__.validate_dims("data initialization","calib_conc","double",
           context__.to_vec(N_calib));
       calib_conc = Eigen::Matrix<double, -1, 1>(N_calib);
@@ -204,29 +217,29 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       {
         std::vector<local_scalar_t__> calib_conc_flat__;
-        current_statement__ = 32;
+        current_statement__ = 37;
         assign(calib_conc_flat__, nil_index_list(),
           context__.vals_r("calib_conc"),
           "assigning variable calib_conc_flat__");
-        current_statement__ = 32;
+        current_statement__ = 37;
         pos__ = 1;
-        current_statement__ = 32;
+        current_statement__ = 37;
         for (int sym1__ = 1; sym1__ <= N_calib; ++sym1__) {
-          current_statement__ = 32;
+          current_statement__ = 37;
           assign(calib_conc, cons_list(index_uni(sym1__), nil_index_list()),
             calib_conc_flat__[(pos__ - 1)], "assigning variable calib_conc");
-          current_statement__ = 32;
+          current_statement__ = 37;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 32;
+      current_statement__ = 37;
       for (int sym1__ = 1; sym1__ <= N_calib; ++sym1__) {
-        current_statement__ = 32;
-        current_statement__ = 32;
+        current_statement__ = 37;
+        current_statement__ = 37;
         check_greater_or_equal(function__, "calib_conc[sym1__]",
                                calib_conc[(sym1__ - 1)], 0);}
-      current_statement__ = 33;
+      current_statement__ = 38;
       validate_non_negative_index("calib_rel_areas", "N_calib", N_calib);
-      current_statement__ = 34;
+      current_statement__ = 39;
       context__.validate_dims("data initialization","calib_rel_areas",
           "double",context__.to_vec(N_calib));
       calib_rel_areas = Eigen::Matrix<double, -1, 1>(N_calib);
@@ -234,31 +247,31 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       {
         std::vector<local_scalar_t__> calib_rel_areas_flat__;
-        current_statement__ = 34;
+        current_statement__ = 39;
         assign(calib_rel_areas_flat__, nil_index_list(),
           context__.vals_r("calib_rel_areas"),
           "assigning variable calib_rel_areas_flat__");
-        current_statement__ = 34;
+        current_statement__ = 39;
         pos__ = 1;
-        current_statement__ = 34;
+        current_statement__ = 39;
         for (int sym1__ = 1; sym1__ <= N_calib; ++sym1__) {
-          current_statement__ = 34;
+          current_statement__ = 39;
           assign(calib_rel_areas,
             cons_list(index_uni(sym1__), nil_index_list()),
             calib_rel_areas_flat__[(pos__ - 1)],
             "assigning variable calib_rel_areas");
-          current_statement__ = 34;
+          current_statement__ = 39;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 34;
+      current_statement__ = 39;
       for (int sym1__ = 1; sym1__ <= N_calib; ++sym1__) {
-        current_statement__ = 34;
-        current_statement__ = 34;
+        current_statement__ = 39;
+        current_statement__ = 39;
         check_greater_or_equal(function__, "calib_rel_areas[sym1__]",
                                calib_rel_areas[(sym1__ - 1)], 0);}
-      current_statement__ = 35;
+      current_statement__ = 40;
       validate_non_negative_index("optical_density", "N_yield", N_yield);
-      current_statement__ = 36;
+      current_statement__ = 41;
       context__.validate_dims("data initialization","optical_density",
           "double",context__.to_vec(N_yield));
       optical_density = Eigen::Matrix<double, -1, 1>(N_yield);
@@ -266,31 +279,31 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       {
         std::vector<local_scalar_t__> optical_density_flat__;
-        current_statement__ = 36;
+        current_statement__ = 41;
         assign(optical_density_flat__, nil_index_list(),
           context__.vals_r("optical_density"),
           "assigning variable optical_density_flat__");
-        current_statement__ = 36;
+        current_statement__ = 41;
         pos__ = 1;
-        current_statement__ = 36;
+        current_statement__ = 41;
         for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
-          current_statement__ = 36;
+          current_statement__ = 41;
           assign(optical_density,
             cons_list(index_uni(sym1__), nil_index_list()),
             optical_density_flat__[(pos__ - 1)],
             "assigning variable optical_density");
-          current_statement__ = 36;
+          current_statement__ = 41;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 36;
+      current_statement__ = 41;
       for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
-        current_statement__ = 36;
-        current_statement__ = 36;
+        current_statement__ = 41;
+        current_statement__ = 41;
         check_greater_or_equal(function__, "optical_density[sym1__]",
                                optical_density[(sym1__ - 1)], 0);}
-      current_statement__ = 37;
+      current_statement__ = 42;
       validate_non_negative_index("yield_rel_areas", "N_yield", N_yield);
-      current_statement__ = 38;
+      current_statement__ = 43;
       context__.validate_dims("data initialization","yield_rel_areas",
           "double",context__.to_vec(N_yield));
       yield_rel_areas = Eigen::Matrix<double, -1, 1>(N_yield);
@@ -298,34 +311,58 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       {
         std::vector<local_scalar_t__> yield_rel_areas_flat__;
-        current_statement__ = 38;
+        current_statement__ = 43;
         assign(yield_rel_areas_flat__, nil_index_list(),
           context__.vals_r("yield_rel_areas"),
           "assigning variable yield_rel_areas_flat__");
-        current_statement__ = 38;
+        current_statement__ = 43;
         pos__ = 1;
-        current_statement__ = 38;
+        current_statement__ = 43;
         for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
-          current_statement__ = 38;
+          current_statement__ = 43;
           assign(yield_rel_areas,
             cons_list(index_uni(sym1__), nil_index_list()),
             yield_rel_areas_flat__[(pos__ - 1)],
             "assigning variable yield_rel_areas");
-          current_statement__ = 38;
+          current_statement__ = 43;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 38;
+      current_statement__ = 43;
       for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
-        current_statement__ = 38;
-        current_statement__ = 38;
+        current_statement__ = 43;
+        current_statement__ = 43;
         check_greater_or_equal(function__, "yield_rel_areas[sym1__]",
                                yield_rel_areas[(sym1__ - 1)], 0);}
-      current_statement__ = 39;
-      validate_non_negative_index("yield_inter", "J", J);
-      current_statement__ = 40;
-      validate_non_negative_index("yield_slope", "J", J);
-      current_statement__ = 41;
+      current_statement__ = 44;
+      validate_non_negative_index("centered_conc", "N_calib", N_calib);
+      current_statement__ = 45;
+      centered_conc = Eigen::Matrix<double, -1, 1>(N_calib);
+      stan::math::fill(centered_conc, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 45;
+      assign(centered_conc, nil_index_list(),
+        divide(subtract(calib_conc, mean(calib_conc)), sd(calib_conc)),
+        "assigning variable centered_conc");
+      current_statement__ = 46;
+      validate_non_negative_index("centered_rel_area", "N_calib", N_calib);
+      current_statement__ = 47;
+      centered_rel_area = Eigen::Matrix<double, -1, 1>(N_calib);
+      stan::math::fill(centered_rel_area, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 47;
+      assign(centered_rel_area, nil_index_list(),
+        divide(subtract(calib_rel_areas, mean(calib_rel_areas)),
+          sd(calib_rel_areas)), "assigning variable centered_rel_area");
+      current_statement__ = 48;
+      validate_non_negative_index("yield_inter_area", "J", J);
+      current_statement__ = 49;
+      validate_non_negative_index("yield_slope_area", "J", J);
+      current_statement__ = 50;
       validate_non_negative_index("yield_concs", "N_yield", N_yield);
+      current_statement__ = 51;
+      validate_non_negative_index("yield_inter", "J", J);
+      current_statement__ = 52;
+      validate_non_negative_index("yield_slope", "J", J);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
       // Next line prevents compiler griping about no return
@@ -367,166 +404,163 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
 
     
     try {
+      local_scalar_t__ calib_slope_cent;
+      calib_slope_cent = DUMMY_VAR__;
+      
+      current_statement__ = 1;
+      calib_slope_cent = in__.scalar();
+      local_scalar_t__ calib_inter_cent;
+      calib_inter_cent = DUMMY_VAR__;
+      
+      current_statement__ = 2;
+      calib_inter_cent = in__.scalar();
+      local_scalar_t__ calib_sigma_cent;
+      calib_sigma_cent = DUMMY_VAR__;
+      
+      current_statement__ = 3;
+      calib_sigma_cent = in__.scalar();
+      current_statement__ = 3;
+      if (jacobian__) {
+        current_statement__ = 3;
+        calib_sigma_cent = stan::math::lb_constrain(calib_sigma_cent, 0, lp__);
+      } else {
+        current_statement__ = 3;
+        calib_sigma_cent = stan::math::lb_constrain(calib_sigma_cent, 0);
+      }
+      local_scalar_t__ yield_inter_area_mu;
+      yield_inter_area_mu = DUMMY_VAR__;
+      
+      current_statement__ = 4;
+      yield_inter_area_mu = in__.scalar();
+      current_statement__ = 4;
+      if (jacobian__) {
+        current_statement__ = 4;
+        yield_inter_area_mu = stan::math::lb_constrain(yield_inter_area_mu,
+                                0, lp__);
+      } else {
+        current_statement__ = 4;
+        yield_inter_area_mu = stan::math::lb_constrain(yield_inter_area_mu, 0);
+      }
+      local_scalar_t__ yield_inter_area_sigma;
+      yield_inter_area_sigma = DUMMY_VAR__;
+      
+      current_statement__ = 5;
+      yield_inter_area_sigma = in__.scalar();
+      current_statement__ = 5;
+      if (jacobian__) {
+        current_statement__ = 5;
+        yield_inter_area_sigma = stan::math::lb_constrain(
+                                   yield_inter_area_sigma, 0, lp__);
+      } else {
+        current_statement__ = 5;
+        yield_inter_area_sigma = stan::math::lb_constrain(
+                                   yield_inter_area_sigma, 0);
+      }
+      local_scalar_t__ yield_slope_area_mu;
+      yield_slope_area_mu = DUMMY_VAR__;
+      
+      current_statement__ = 6;
+      yield_slope_area_mu = in__.scalar();
+      local_scalar_t__ yield_slope_area_sigma;
+      yield_slope_area_sigma = DUMMY_VAR__;
+      
+      current_statement__ = 7;
+      yield_slope_area_sigma = in__.scalar();
+      current_statement__ = 7;
+      if (jacobian__) {
+        current_statement__ = 7;
+        yield_slope_area_sigma = stan::math::lb_constrain(
+                                   yield_slope_area_sigma, 0, lp__);
+      } else {
+        current_statement__ = 7;
+        yield_slope_area_sigma = stan::math::lb_constrain(
+                                   yield_slope_area_sigma, 0);
+      }
+      Eigen::Matrix<local_scalar_t__, -1, 1> yield_inter_area;
+      yield_inter_area = Eigen::Matrix<local_scalar_t__, -1, 1>(J);
+      stan::math::fill(yield_inter_area, DUMMY_VAR__);
+      
+      current_statement__ = 8;
+      yield_inter_area = in__.vector(J);
+      Eigen::Matrix<local_scalar_t__, -1, 1> yield_slope_area;
+      yield_slope_area = Eigen::Matrix<local_scalar_t__, -1, 1>(J);
+      stan::math::fill(yield_slope_area, DUMMY_VAR__);
+      
+      current_statement__ = 9;
+      yield_slope_area = in__.vector(J);
+      local_scalar_t__ yield_area_sigma;
+      yield_area_sigma = DUMMY_VAR__;
+      
+      current_statement__ = 10;
+      yield_area_sigma = in__.scalar();
+      current_statement__ = 10;
+      if (jacobian__) {
+        current_statement__ = 10;
+        yield_area_sigma = stan::math::lb_constrain(yield_area_sigma, 0, lp__);
+      } else {
+        current_statement__ = 10;
+        yield_area_sigma = stan::math::lb_constrain(yield_area_sigma, 0);
+      }
       local_scalar_t__ calib_slope;
       calib_slope = DUMMY_VAR__;
       
-      current_statement__ = 1;
-      calib_slope = in__.scalar();
-      current_statement__ = 1;
-      if (jacobian__) {
-        current_statement__ = 1;
-        calib_slope = stan::math::lb_constrain(calib_slope, 0, lp__);
-      } else {
-        current_statement__ = 1;
-        calib_slope = stan::math::lb_constrain(calib_slope, 0);
-      }
+      current_statement__ = 11;
+      calib_slope = ((calib_slope_cent * sd(calib_rel_areas)) /
+                      sd(calib_conc));
       local_scalar_t__ calib_inter;
       calib_inter = DUMMY_VAR__;
       
-      current_statement__ = 2;
-      calib_inter = in__.scalar();
-      current_statement__ = 2;
-      if (jacobian__) {
-        current_statement__ = 2;
-        calib_inter = stan::math::lb_constrain(calib_inter, 0, lp__);
-      } else {
-        current_statement__ = 2;
-        calib_inter = stan::math::lb_constrain(calib_inter, 0);
-      }
+      current_statement__ = 12;
+      calib_inter = ((sd(calib_rel_areas) *
+                       (calib_inter_cent -
+                         ((calib_slope_cent * mean(calib_conc)) /
+                           sd(calib_conc)))) + mean(calib_rel_areas));
       local_scalar_t__ calib_sigma;
       calib_sigma = DUMMY_VAR__;
       
-      current_statement__ = 3;
-      calib_sigma = in__.scalar();
-      current_statement__ = 3;
-      if (jacobian__) {
-        current_statement__ = 3;
-        calib_sigma = stan::math::lb_constrain(calib_sigma, 0, lp__);
-      } else {
-        current_statement__ = 3;
-        calib_sigma = stan::math::lb_constrain(calib_sigma, 0);
-      }
-      local_scalar_t__ yield_inter_mu;
-      yield_inter_mu = DUMMY_VAR__;
-      
-      current_statement__ = 4;
-      yield_inter_mu = in__.scalar();
-      current_statement__ = 4;
-      if (jacobian__) {
-        current_statement__ = 4;
-        yield_inter_mu = stan::math::lb_constrain(yield_inter_mu, 0, lp__);
-      } else {
-        current_statement__ = 4;
-        yield_inter_mu = stan::math::lb_constrain(yield_inter_mu, 0);
-      }
-      local_scalar_t__ yield_inter_sigma;
-      yield_inter_sigma = DUMMY_VAR__;
-      
-      current_statement__ = 5;
-      yield_inter_sigma = in__.scalar();
-      current_statement__ = 5;
-      if (jacobian__) {
-        current_statement__ = 5;
-        yield_inter_sigma = stan::math::lb_constrain(yield_inter_sigma, 0,
-                              lp__);
-      } else {
-        current_statement__ = 5;
-        yield_inter_sigma = stan::math::lb_constrain(yield_inter_sigma, 0);
-      }
-      local_scalar_t__ yield_slope_mu;
-      yield_slope_mu = DUMMY_VAR__;
-      
-      current_statement__ = 6;
-      yield_slope_mu = in__.scalar();
-      local_scalar_t__ yield_slope_sigma;
-      yield_slope_sigma = DUMMY_VAR__;
-      
-      current_statement__ = 7;
-      yield_slope_sigma = in__.scalar();
-      current_statement__ = 7;
-      if (jacobian__) {
-        current_statement__ = 7;
-        yield_slope_sigma = stan::math::lb_constrain(yield_slope_sigma, 0,
-                              lp__);
-      } else {
-        current_statement__ = 7;
-        yield_slope_sigma = stan::math::lb_constrain(yield_slope_sigma, 0);
-      }
-      Eigen::Matrix<local_scalar_t__, -1, 1> yield_inter;
-      yield_inter = Eigen::Matrix<local_scalar_t__, -1, 1>(J);
-      stan::math::fill(yield_inter, DUMMY_VAR__);
-      
-      current_statement__ = 8;
-      yield_inter = in__.vector(J);
-      Eigen::Matrix<local_scalar_t__, -1, 1> yield_slope;
-      yield_slope = Eigen::Matrix<local_scalar_t__, -1, 1>(J);
-      stan::math::fill(yield_slope, DUMMY_VAR__);
-      
-      current_statement__ = 9;
-      yield_slope = in__.vector(J);
-      local_scalar_t__ yield_sigma;
-      yield_sigma = DUMMY_VAR__;
-      
-      current_statement__ = 10;
-      yield_sigma = in__.scalar();
-      current_statement__ = 10;
-      if (jacobian__) {
-        current_statement__ = 10;
-        yield_sigma = stan::math::lb_constrain(yield_sigma, 0, lp__);
-      } else {
-        current_statement__ = 10;
-        yield_sigma = stan::math::lb_constrain(yield_sigma, 0);
-      }
+      current_statement__ = 13;
+      calib_sigma = (sd(calib_rel_areas) * calib_sigma_cent);
       {
-        current_statement__ = 12;
-        validate_non_negative_index("yield_concs", "N_yield", N_yield);
-        Eigen::Matrix<local_scalar_t__, -1, 1> yield_concs;
-        yield_concs = Eigen::Matrix<local_scalar_t__, -1, 1>(N_yield);
-        stan::math::fill(yield_concs, DUMMY_VAR__);
-        
-        current_statement__ = 13;
-        assign(yield_concs, nil_index_list(),
-          divide(subtract(yield_rel_areas, calib_inter), calib_slope),
-          "assigning variable yield_concs");
-        current_statement__ = 14;
-        lp_accum__.add(std_normal_lpdf<propto__>(calib_inter));
-        current_statement__ = 15;
-        lp_accum__.add(std_normal_lpdf<propto__>(calib_slope));
-        current_statement__ = 16;
-        lp_accum__.add(std_normal_lpdf<propto__>(calib_sigma));
-        current_statement__ = 17;
-        lp_accum__.add(std_normal_lpdf<propto__>(yield_inter_mu));
-        current_statement__ = 18;
-        lp_accum__.add(std_normal_lpdf<propto__>(yield_slope_mu));
         current_statement__ = 19;
-        lp_accum__.add(normal_lpdf<propto__>(yield_inter_sigma, 0, 0.1));
+        lp_accum__.add(std_normal_lpdf<propto__>(calib_inter_cent));
         current_statement__ = 20;
-        lp_accum__.add(normal_lpdf<propto__>(yield_slope_sigma, 0, 0.1));
+        lp_accum__.add(std_normal_lpdf<propto__>(calib_slope_cent));
         current_statement__ = 21;
-        lp_accum__.add(
-          normal_lpdf<propto__>(yield_inter, yield_inter_mu,
-            yield_inter_sigma));
+        lp_accum__.add(std_normal_lpdf<propto__>(calib_sigma_cent));
         current_statement__ = 22;
-        lp_accum__.add(
-          normal_lpdf<propto__>(yield_slope, yield_slope_mu,
-            yield_slope_sigma));
+        lp_accum__.add(std_normal_lpdf<propto__>(yield_inter_area_mu));
         current_statement__ = 23;
-        lp_accum__.add(std_normal_lpdf<propto__>(yield_sigma));
+        lp_accum__.add(std_normal_lpdf<propto__>(yield_slope_area_mu));
         current_statement__ = 24;
-        lp_accum__.add(
-          normal_lpdf<propto__>(calib_rel_areas,
-            add(multiply(calib_slope, calib_conc), calib_inter), calib_sigma));
+        lp_accum__.add(normal_lpdf<propto__>(yield_inter_area_sigma, 0, 0.1));
         current_statement__ = 25;
+        lp_accum__.add(normal_lpdf<propto__>(yield_slope_area_sigma, 0, 0.1));
+        current_statement__ = 26;
         lp_accum__.add(
-          normal_lpdf<propto__>(yield_concs,
+          normal_lpdf<propto__>(yield_inter_area, yield_inter_area_mu,
+            yield_inter_area_sigma));
+        current_statement__ = 27;
+        lp_accum__.add(
+          normal_lpdf<propto__>(yield_slope_area, yield_slope_area_mu,
+            yield_slope_area_sigma));
+        current_statement__ = 28;
+        lp_accum__.add(std_normal_lpdf<propto__>(yield_area_sigma));
+        current_statement__ = 29;
+        lp_accum__.add(
+          normal_lpdf<propto__>(centered_rel_area,
+            add(multiply(calib_slope_cent, centered_conc), calib_inter_cent),
+            calib_sigma_cent));
+        current_statement__ = 30;
+        lp_accum__.add(
+          normal_lpdf<propto__>(yield_rel_areas,
             add(
               elt_multiply(
-                rvalue(yield_slope,
+                rvalue(yield_slope_area,
                   cons_list(index_multi(idx), nil_index_list()),
-                  "yield_slope"), optical_density),
-              rvalue(yield_inter,
-                cons_list(index_multi(idx), nil_index_list()), "yield_inter")),
-            yield_sigma));
+                  "yield_slope_area"), optical_density),
+              rvalue(yield_inter_area,
+                cons_list(index_multi(idx), nil_index_list()),
+                "yield_inter_area")), yield_area_sigma));
       }
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -559,87 +593,109 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
 
     
     try {
+      double calib_slope_cent;
+      calib_slope_cent = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 1;
+      calib_slope_cent = in__.scalar();
+      double calib_inter_cent;
+      calib_inter_cent = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 2;
+      calib_inter_cent = in__.scalar();
+      double calib_sigma_cent;
+      calib_sigma_cent = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 3;
+      calib_sigma_cent = in__.scalar();
+      current_statement__ = 3;
+      calib_sigma_cent = stan::math::lb_constrain(calib_sigma_cent, 0);
+      double yield_inter_area_mu;
+      yield_inter_area_mu = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 4;
+      yield_inter_area_mu = in__.scalar();
+      current_statement__ = 4;
+      yield_inter_area_mu = stan::math::lb_constrain(yield_inter_area_mu, 0);
+      double yield_inter_area_sigma;
+      yield_inter_area_sigma = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 5;
+      yield_inter_area_sigma = in__.scalar();
+      current_statement__ = 5;
+      yield_inter_area_sigma = stan::math::lb_constrain(
+                                 yield_inter_area_sigma, 0);
+      double yield_slope_area_mu;
+      yield_slope_area_mu = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 6;
+      yield_slope_area_mu = in__.scalar();
+      double yield_slope_area_sigma;
+      yield_slope_area_sigma = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 7;
+      yield_slope_area_sigma = in__.scalar();
+      current_statement__ = 7;
+      yield_slope_area_sigma = stan::math::lb_constrain(
+                                 yield_slope_area_sigma, 0);
+      Eigen::Matrix<double, -1, 1> yield_inter_area;
+      yield_inter_area = Eigen::Matrix<double, -1, 1>(J);
+      stan::math::fill(yield_inter_area, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 8;
+      yield_inter_area = in__.vector(J);
+      Eigen::Matrix<double, -1, 1> yield_slope_area;
+      yield_slope_area = Eigen::Matrix<double, -1, 1>(J);
+      stan::math::fill(yield_slope_area, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 9;
+      yield_slope_area = in__.vector(J);
+      double yield_area_sigma;
+      yield_area_sigma = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 10;
+      yield_area_sigma = in__.scalar();
+      current_statement__ = 10;
+      yield_area_sigma = stan::math::lb_constrain(yield_area_sigma, 0);
       double calib_slope;
       calib_slope = std::numeric_limits<double>::quiet_NaN();
       
-      current_statement__ = 1;
-      calib_slope = in__.scalar();
-      current_statement__ = 1;
-      calib_slope = stan::math::lb_constrain(calib_slope, 0);
       double calib_inter;
       calib_inter = std::numeric_limits<double>::quiet_NaN();
       
-      current_statement__ = 2;
-      calib_inter = in__.scalar();
-      current_statement__ = 2;
-      calib_inter = stan::math::lb_constrain(calib_inter, 0);
       double calib_sigma;
       calib_sigma = std::numeric_limits<double>::quiet_NaN();
       
-      current_statement__ = 3;
-      calib_sigma = in__.scalar();
-      current_statement__ = 3;
-      calib_sigma = stan::math::lb_constrain(calib_sigma, 0);
-      double yield_inter_mu;
-      yield_inter_mu = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 4;
-      yield_inter_mu = in__.scalar();
-      current_statement__ = 4;
-      yield_inter_mu = stan::math::lb_constrain(yield_inter_mu, 0);
-      double yield_inter_sigma;
-      yield_inter_sigma = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 5;
-      yield_inter_sigma = in__.scalar();
-      current_statement__ = 5;
-      yield_inter_sigma = stan::math::lb_constrain(yield_inter_sigma, 0);
-      double yield_slope_mu;
-      yield_slope_mu = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 6;
-      yield_slope_mu = in__.scalar();
-      double yield_slope_sigma;
-      yield_slope_sigma = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 7;
-      yield_slope_sigma = in__.scalar();
-      current_statement__ = 7;
-      yield_slope_sigma = stan::math::lb_constrain(yield_slope_sigma, 0);
-      Eigen::Matrix<double, -1, 1> yield_inter;
-      yield_inter = Eigen::Matrix<double, -1, 1>(J);
-      stan::math::fill(yield_inter, std::numeric_limits<double>::quiet_NaN());
-      
-      current_statement__ = 8;
-      yield_inter = in__.vector(J);
-      Eigen::Matrix<double, -1, 1> yield_slope;
-      yield_slope = Eigen::Matrix<double, -1, 1>(J);
-      stan::math::fill(yield_slope, std::numeric_limits<double>::quiet_NaN());
-      
-      current_statement__ = 9;
-      yield_slope = in__.vector(J);
-      double yield_sigma;
-      yield_sigma = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 10;
-      yield_sigma = in__.scalar();
-      current_statement__ = 10;
-      yield_sigma = stan::math::lb_constrain(yield_sigma, 0);
-      vars__.emplace_back(calib_slope);
-      vars__.emplace_back(calib_inter);
-      vars__.emplace_back(calib_sigma);
-      vars__.emplace_back(yield_inter_mu);
-      vars__.emplace_back(yield_inter_sigma);
-      vars__.emplace_back(yield_slope_mu);
-      vars__.emplace_back(yield_slope_sigma);
+      vars__.emplace_back(calib_slope_cent);
+      vars__.emplace_back(calib_inter_cent);
+      vars__.emplace_back(calib_sigma_cent);
+      vars__.emplace_back(yield_inter_area_mu);
+      vars__.emplace_back(yield_inter_area_sigma);
+      vars__.emplace_back(yield_slope_area_mu);
+      vars__.emplace_back(yield_slope_area_sigma);
       for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
-        vars__.emplace_back(yield_inter[(sym1__ - 1)]);}
+        vars__.emplace_back(yield_inter_area[(sym1__ - 1)]);}
       for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
-        vars__.emplace_back(yield_slope[(sym1__ - 1)]);}
-      vars__.emplace_back(yield_sigma);
+        vars__.emplace_back(yield_slope_area[(sym1__ - 1)]);}
+      vars__.emplace_back(yield_area_sigma);
       if (logical_negation((primitive_value(emit_transformed_parameters__) ||
             primitive_value(emit_generated_quantities__)))) {
         return ;
+      } 
+      current_statement__ = 11;
+      calib_slope = ((calib_slope_cent * sd(calib_rel_areas)) /
+                      sd(calib_conc));
+      current_statement__ = 12;
+      calib_inter = ((sd(calib_rel_areas) *
+                       (calib_inter_cent -
+                         ((calib_slope_cent * mean(calib_conc)) /
+                           sd(calib_conc)))) + mean(calib_rel_areas));
+      current_statement__ = 13;
+      calib_sigma = (sd(calib_rel_areas) * calib_sigma_cent);
+      if (emit_transformed_parameters__) {
+        vars__.emplace_back(calib_slope);
+        vars__.emplace_back(calib_inter);
+        vars__.emplace_back(calib_sigma);
       } 
       if (logical_negation(emit_generated_quantities__)) {
         return ;
@@ -648,12 +704,44 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       yield_concs = Eigen::Matrix<double, -1, 1>(N_yield);
       stan::math::fill(yield_concs, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 11;
+      current_statement__ = 14;
       assign(yield_concs, nil_index_list(),
         divide(subtract(yield_rel_areas, calib_inter), calib_slope),
         "assigning variable yield_concs");
+      Eigen::Matrix<double, -1, 1> yield_inter;
+      yield_inter = Eigen::Matrix<double, -1, 1>(J);
+      stan::math::fill(yield_inter, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 15;
+      assign(yield_inter, nil_index_list(),
+        divide(subtract(yield_inter_area, calib_inter), calib_slope),
+        "assigning variable yield_inter");
+      Eigen::Matrix<double, -1, 1> yield_slope;
+      yield_slope = Eigen::Matrix<double, -1, 1>(J);
+      stan::math::fill(yield_slope, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 16;
+      assign(yield_slope, nil_index_list(),
+        divide(subtract(yield_slope_area, calib_inter), calib_slope),
+        "assigning variable yield_slope");
+      double yield_inter_mu;
+      yield_inter_mu = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 17;
+      yield_inter_mu = ((yield_inter_area_mu - calib_inter) / calib_slope);
+      double yield_slope_mu;
+      yield_slope_mu = std::numeric_limits<double>::quiet_NaN();
+      
+      current_statement__ = 18;
+      yield_slope_mu = ((yield_slope_area_mu - calib_inter) / calib_slope);
       for (int sym1__ = 1; sym1__ <= N_yield; ++sym1__) {
         vars__.emplace_back(yield_concs[(sym1__ - 1)]);}
+      for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
+        vars__.emplace_back(yield_inter[(sym1__ - 1)]);}
+      for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
+        vars__.emplace_back(yield_slope[(sym1__ - 1)]);}
+      vars__.emplace_back(yield_inter_mu);
+      vars__.emplace_back(yield_slope_mu);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
       // Next line prevents compiler griping about no return
@@ -674,133 +762,131 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       pos__ = std::numeric_limits<int>::min();
       
       pos__ = 1;
-      double calib_slope;
-      calib_slope = std::numeric_limits<double>::quiet_NaN();
+      double calib_slope_cent;
+      calib_slope_cent = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 1;
-      calib_slope = context__.vals_r("calib_slope")[(1 - 1)];
-      double calib_slope_free__;
-      calib_slope_free__ = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 1;
-      calib_slope_free__ = stan::math::lb_free(calib_slope, 0);
-      double calib_inter;
-      calib_inter = std::numeric_limits<double>::quiet_NaN();
+      calib_slope_cent = context__.vals_r("calib_slope_cent")[(1 - 1)];
+      double calib_inter_cent;
+      calib_inter_cent = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 2;
-      calib_inter = context__.vals_r("calib_inter")[(1 - 1)];
-      double calib_inter_free__;
-      calib_inter_free__ = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 2;
-      calib_inter_free__ = stan::math::lb_free(calib_inter, 0);
-      double calib_sigma;
-      calib_sigma = std::numeric_limits<double>::quiet_NaN();
+      calib_inter_cent = context__.vals_r("calib_inter_cent")[(1 - 1)];
+      double calib_sigma_cent;
+      calib_sigma_cent = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 3;
-      calib_sigma = context__.vals_r("calib_sigma")[(1 - 1)];
-      double calib_sigma_free__;
-      calib_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
+      calib_sigma_cent = context__.vals_r("calib_sigma_cent")[(1 - 1)];
+      double calib_sigma_cent_free__;
+      calib_sigma_cent_free__ = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 3;
-      calib_sigma_free__ = stan::math::lb_free(calib_sigma, 0);
-      double yield_inter_mu;
-      yield_inter_mu = std::numeric_limits<double>::quiet_NaN();
+      calib_sigma_cent_free__ = stan::math::lb_free(calib_sigma_cent, 0);
+      double yield_inter_area_mu;
+      yield_inter_area_mu = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 4;
-      yield_inter_mu = context__.vals_r("yield_inter_mu")[(1 - 1)];
-      double yield_inter_mu_free__;
-      yield_inter_mu_free__ = std::numeric_limits<double>::quiet_NaN();
+      yield_inter_area_mu = context__.vals_r("yield_inter_area_mu")[(1 - 1)];
+      double yield_inter_area_mu_free__;
+      yield_inter_area_mu_free__ = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 4;
-      yield_inter_mu_free__ = stan::math::lb_free(yield_inter_mu, 0);
-      double yield_inter_sigma;
-      yield_inter_sigma = std::numeric_limits<double>::quiet_NaN();
+      yield_inter_area_mu_free__ = stan::math::lb_free(yield_inter_area_mu, 0);
+      double yield_inter_area_sigma;
+      yield_inter_area_sigma = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 5;
-      yield_inter_sigma = context__.vals_r("yield_inter_sigma")[(1 - 1)];
-      double yield_inter_sigma_free__;
-      yield_inter_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
+      yield_inter_area_sigma = context__.vals_r("yield_inter_area_sigma")[
+          (1 - 1)];
+      double yield_inter_area_sigma_free__;
+      yield_inter_area_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 5;
-      yield_inter_sigma_free__ = stan::math::lb_free(yield_inter_sigma, 0);
-      double yield_slope_mu;
-      yield_slope_mu = std::numeric_limits<double>::quiet_NaN();
+      yield_inter_area_sigma_free__ = stan::math::lb_free(
+                                        yield_inter_area_sigma, 0);
+      double yield_slope_area_mu;
+      yield_slope_area_mu = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 6;
-      yield_slope_mu = context__.vals_r("yield_slope_mu")[(1 - 1)];
-      double yield_slope_sigma;
-      yield_slope_sigma = std::numeric_limits<double>::quiet_NaN();
+      yield_slope_area_mu = context__.vals_r("yield_slope_area_mu")[(1 - 1)];
+      double yield_slope_area_sigma;
+      yield_slope_area_sigma = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 7;
-      yield_slope_sigma = context__.vals_r("yield_slope_sigma")[(1 - 1)];
-      double yield_slope_sigma_free__;
-      yield_slope_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
+      yield_slope_area_sigma = context__.vals_r("yield_slope_area_sigma")[
+          (1 - 1)];
+      double yield_slope_area_sigma_free__;
+      yield_slope_area_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 7;
-      yield_slope_sigma_free__ = stan::math::lb_free(yield_slope_sigma, 0);
-      Eigen::Matrix<double, -1, 1> yield_inter;
-      yield_inter = Eigen::Matrix<double, -1, 1>(J);
-      stan::math::fill(yield_inter, std::numeric_limits<double>::quiet_NaN());
+      yield_slope_area_sigma_free__ = stan::math::lb_free(
+                                        yield_slope_area_sigma, 0);
+      Eigen::Matrix<double, -1, 1> yield_inter_area;
+      yield_inter_area = Eigen::Matrix<double, -1, 1>(J);
+      stan::math::fill(yield_inter_area, std::numeric_limits<double>::quiet_NaN());
       
       {
-        std::vector<local_scalar_t__> yield_inter_flat__;
+        std::vector<local_scalar_t__> yield_inter_area_flat__;
         current_statement__ = 8;
-        assign(yield_inter_flat__, nil_index_list(),
-          context__.vals_r("yield_inter"),
-          "assigning variable yield_inter_flat__");
+        assign(yield_inter_area_flat__, nil_index_list(),
+          context__.vals_r("yield_inter_area"),
+          "assigning variable yield_inter_area_flat__");
         current_statement__ = 8;
         pos__ = 1;
         current_statement__ = 8;
         for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
           current_statement__ = 8;
-          assign(yield_inter, cons_list(index_uni(sym1__), nil_index_list()),
-            yield_inter_flat__[(pos__ - 1)], "assigning variable yield_inter");
+          assign(yield_inter_area,
+            cons_list(index_uni(sym1__), nil_index_list()),
+            yield_inter_area_flat__[(pos__ - 1)],
+            "assigning variable yield_inter_area");
           current_statement__ = 8;
           pos__ = (pos__ + 1);}
       }
-      Eigen::Matrix<double, -1, 1> yield_slope;
-      yield_slope = Eigen::Matrix<double, -1, 1>(J);
-      stan::math::fill(yield_slope, std::numeric_limits<double>::quiet_NaN());
+      Eigen::Matrix<double, -1, 1> yield_slope_area;
+      yield_slope_area = Eigen::Matrix<double, -1, 1>(J);
+      stan::math::fill(yield_slope_area, std::numeric_limits<double>::quiet_NaN());
       
       {
-        std::vector<local_scalar_t__> yield_slope_flat__;
+        std::vector<local_scalar_t__> yield_slope_area_flat__;
         current_statement__ = 9;
-        assign(yield_slope_flat__, nil_index_list(),
-          context__.vals_r("yield_slope"),
-          "assigning variable yield_slope_flat__");
+        assign(yield_slope_area_flat__, nil_index_list(),
+          context__.vals_r("yield_slope_area"),
+          "assigning variable yield_slope_area_flat__");
         current_statement__ = 9;
         pos__ = 1;
         current_statement__ = 9;
         for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
           current_statement__ = 9;
-          assign(yield_slope, cons_list(index_uni(sym1__), nil_index_list()),
-            yield_slope_flat__[(pos__ - 1)], "assigning variable yield_slope");
+          assign(yield_slope_area,
+            cons_list(index_uni(sym1__), nil_index_list()),
+            yield_slope_area_flat__[(pos__ - 1)],
+            "assigning variable yield_slope_area");
           current_statement__ = 9;
           pos__ = (pos__ + 1);}
       }
-      double yield_sigma;
-      yield_sigma = std::numeric_limits<double>::quiet_NaN();
+      double yield_area_sigma;
+      yield_area_sigma = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 10;
-      yield_sigma = context__.vals_r("yield_sigma")[(1 - 1)];
-      double yield_sigma_free__;
-      yield_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
+      yield_area_sigma = context__.vals_r("yield_area_sigma")[(1 - 1)];
+      double yield_area_sigma_free__;
+      yield_area_sigma_free__ = std::numeric_limits<double>::quiet_NaN();
       
       current_statement__ = 10;
-      yield_sigma_free__ = stan::math::lb_free(yield_sigma, 0);
-      vars__.emplace_back(calib_slope_free__);
-      vars__.emplace_back(calib_inter_free__);
-      vars__.emplace_back(calib_sigma_free__);
-      vars__.emplace_back(yield_inter_mu_free__);
-      vars__.emplace_back(yield_inter_sigma_free__);
-      vars__.emplace_back(yield_slope_mu);
-      vars__.emplace_back(yield_slope_sigma_free__);
+      yield_area_sigma_free__ = stan::math::lb_free(yield_area_sigma, 0);
+      vars__.emplace_back(calib_slope_cent);
+      vars__.emplace_back(calib_inter_cent);
+      vars__.emplace_back(calib_sigma_cent_free__);
+      vars__.emplace_back(yield_inter_area_mu_free__);
+      vars__.emplace_back(yield_inter_area_sigma_free__);
+      vars__.emplace_back(yield_slope_area_mu);
+      vars__.emplace_back(yield_slope_area_sigma_free__);
       for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
-        vars__.emplace_back(yield_inter[(sym1__ - 1)]);}
+        vars__.emplace_back(yield_inter_area[(sym1__ - 1)]);}
       for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
-        vars__.emplace_back(yield_slope[(sym1__ - 1)]);}
-      vars__.emplace_back(yield_sigma_free__);
+        vars__.emplace_back(yield_slope_area[(sym1__ - 1)]);}
+      vars__.emplace_back(yield_area_sigma_free__);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
       // Next line prevents compiler griping about no return
@@ -811,17 +897,24 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
   inline void get_param_names(std::vector<std::string>& names__) const {
     
     names__.clear();
+    names__.emplace_back("calib_slope_cent");
+    names__.emplace_back("calib_inter_cent");
+    names__.emplace_back("calib_sigma_cent");
+    names__.emplace_back("yield_inter_area_mu");
+    names__.emplace_back("yield_inter_area_sigma");
+    names__.emplace_back("yield_slope_area_mu");
+    names__.emplace_back("yield_slope_area_sigma");
+    names__.emplace_back("yield_inter_area");
+    names__.emplace_back("yield_slope_area");
+    names__.emplace_back("yield_area_sigma");
     names__.emplace_back("calib_slope");
     names__.emplace_back("calib_inter");
     names__.emplace_back("calib_sigma");
-    names__.emplace_back("yield_inter_mu");
-    names__.emplace_back("yield_inter_sigma");
-    names__.emplace_back("yield_slope_mu");
-    names__.emplace_back("yield_slope_sigma");
+    names__.emplace_back("yield_concs");
     names__.emplace_back("yield_inter");
     names__.emplace_back("yield_slope");
-    names__.emplace_back("yield_sigma");
-    names__.emplace_back("yield_concs");
+    names__.emplace_back("yield_inter_mu");
+    names__.emplace_back("yield_slope_mu");
     } // get_param_names() 
     
   inline void get_dims(std::vector<std::vector<size_t>>& dimss__) const {
@@ -846,7 +939,21 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
     
     dimss__.emplace_back(std::vector<size_t>{});
     
+    dimss__.emplace_back(std::vector<size_t>{});
+    
+    dimss__.emplace_back(std::vector<size_t>{});
+    
+    dimss__.emplace_back(std::vector<size_t>{});
+    
     dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(N_yield)});
+    
+    dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(J)});
+    
+    dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(J)});
+    
+    dimss__.emplace_back(std::vector<size_t>{});
+    
+    dimss__.emplace_back(std::vector<size_t>{});
     
     } // get_dims() 
     
@@ -856,24 +963,26 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
                                       bool emit_generated_quantities__ = true) const
     final {
     
-    param_names__.emplace_back(std::string() + "calib_slope");
-    param_names__.emplace_back(std::string() + "calib_inter");
-    param_names__.emplace_back(std::string() + "calib_sigma");
-    param_names__.emplace_back(std::string() + "yield_inter_mu");
-    param_names__.emplace_back(std::string() + "yield_inter_sigma");
-    param_names__.emplace_back(std::string() + "yield_slope_mu");
-    param_names__.emplace_back(std::string() + "yield_slope_sigma");
+    param_names__.emplace_back(std::string() + "calib_slope_cent");
+    param_names__.emplace_back(std::string() + "calib_inter_cent");
+    param_names__.emplace_back(std::string() + "calib_sigma_cent");
+    param_names__.emplace_back(std::string() + "yield_inter_area_mu");
+    param_names__.emplace_back(std::string() + "yield_inter_area_sigma");
+    param_names__.emplace_back(std::string() + "yield_slope_area_mu");
+    param_names__.emplace_back(std::string() + "yield_slope_area_sigma");
     for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
       {
-        param_names__.emplace_back(std::string() + "yield_inter" + '.' + std::to_string(sym1__));
+        param_names__.emplace_back(std::string() + "yield_inter_area" + '.' + std::to_string(sym1__));
       }}
     for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
       {
-        param_names__.emplace_back(std::string() + "yield_slope" + '.' + std::to_string(sym1__));
+        param_names__.emplace_back(std::string() + "yield_slope_area" + '.' + std::to_string(sym1__));
       }}
-    param_names__.emplace_back(std::string() + "yield_sigma");
+    param_names__.emplace_back(std::string() + "yield_area_sigma");
     if (emit_transformed_parameters__) {
-      
+      param_names__.emplace_back(std::string() + "calib_slope");
+      param_names__.emplace_back(std::string() + "calib_inter");
+      param_names__.emplace_back(std::string() + "calib_sigma");
     }
     
     if (emit_generated_quantities__) {
@@ -881,6 +990,16 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
         {
           param_names__.emplace_back(std::string() + "yield_concs" + '.' + std::to_string(sym1__));
         }}
+      for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "yield_inter" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "yield_slope" + '.' + std::to_string(sym1__));
+        }}
+      param_names__.emplace_back(std::string() + "yield_inter_mu");
+      param_names__.emplace_back(std::string() + "yield_slope_mu");
     }
     
     } // constrained_param_names() 
@@ -891,24 +1010,26 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
                                         bool emit_generated_quantities__ = true) const
     final {
     
-    param_names__.emplace_back(std::string() + "calib_slope");
-    param_names__.emplace_back(std::string() + "calib_inter");
-    param_names__.emplace_back(std::string() + "calib_sigma");
-    param_names__.emplace_back(std::string() + "yield_inter_mu");
-    param_names__.emplace_back(std::string() + "yield_inter_sigma");
-    param_names__.emplace_back(std::string() + "yield_slope_mu");
-    param_names__.emplace_back(std::string() + "yield_slope_sigma");
+    param_names__.emplace_back(std::string() + "calib_slope_cent");
+    param_names__.emplace_back(std::string() + "calib_inter_cent");
+    param_names__.emplace_back(std::string() + "calib_sigma_cent");
+    param_names__.emplace_back(std::string() + "yield_inter_area_mu");
+    param_names__.emplace_back(std::string() + "yield_inter_area_sigma");
+    param_names__.emplace_back(std::string() + "yield_slope_area_mu");
+    param_names__.emplace_back(std::string() + "yield_slope_area_sigma");
     for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
       {
-        param_names__.emplace_back(std::string() + "yield_inter" + '.' + std::to_string(sym1__));
+        param_names__.emplace_back(std::string() + "yield_inter_area" + '.' + std::to_string(sym1__));
       }}
     for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
       {
-        param_names__.emplace_back(std::string() + "yield_slope" + '.' + std::to_string(sym1__));
+        param_names__.emplace_back(std::string() + "yield_slope_area" + '.' + std::to_string(sym1__));
       }}
-    param_names__.emplace_back(std::string() + "yield_sigma");
+    param_names__.emplace_back(std::string() + "yield_area_sigma");
     if (emit_transformed_parameters__) {
-      
+      param_names__.emplace_back(std::string() + "calib_slope");
+      param_names__.emplace_back(std::string() + "calib_inter");
+      param_names__.emplace_back(std::string() + "calib_sigma");
     }
     
     if (emit_generated_quantities__) {
@@ -916,19 +1037,29 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
         {
           param_names__.emplace_back(std::string() + "yield_concs" + '.' + std::to_string(sym1__));
         }}
+      for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "yield_inter" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= J; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "yield_slope" + '.' + std::to_string(sym1__));
+        }}
+      param_names__.emplace_back(std::string() + "yield_inter_mu");
+      param_names__.emplace_back(std::string() + "yield_slope_mu");
     }
     
     } // unconstrained_param_names() 
     
   inline std::string get_constrained_sizedtypes() const {
     stringstream s__;
-    s__ << "[{\"name\":\"calib_slope\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_inter\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_slope\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_concs\",\"type\":{\"name\":\"vector\",\"length\":" << N_yield << "},\"block\":\"generated_quantities\"}]";
+    s__ << "[{\"name\":\"calib_slope_cent\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_inter_cent\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_sigma_cent\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_area_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_area_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_area_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_area_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_area\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_slope_area\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_area_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_slope\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"calib_inter\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"calib_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"yield_concs\",\"type\":{\"name\":\"vector\",\"length\":" << N_yield << "},\"block\":\"generated_quantities\"},{\"name\":\"yield_inter\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"generated_quantities\"},{\"name\":\"yield_slope\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"generated_quantities\"},{\"name\":\"yield_inter_mu\",\"type\":{\"name\":\"real\"},\"block\":\"generated_quantities\"},{\"name\":\"yield_slope_mu\",\"type\":{\"name\":\"real\"},\"block\":\"generated_quantities\"}]";
     return s__.str();
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     stringstream s__;
-    s__ << "[{\"name\":\"calib_slope\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_inter\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_slope\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_concs\",\"type\":{\"name\":\"vector\",\"length\":" << N_yield << "},\"block\":\"generated_quantities\"}]";
+    s__ << "[{\"name\":\"calib_slope_cent\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_inter_cent\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_sigma_cent\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_area_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_area_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_area_mu\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_slope_area_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"yield_inter_area\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_slope_area\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"parameters\"},{\"name\":\"yield_area_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"calib_slope\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"calib_inter\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"calib_sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"yield_concs\",\"type\":{\"name\":\"vector\",\"length\":" << N_yield << "},\"block\":\"generated_quantities\"},{\"name\":\"yield_inter\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"generated_quantities\"},{\"name\":\"yield_slope\",\"type\":{\"name\":\"vector\",\"length\":" << J << "},\"block\":\"generated_quantities\"},{\"name\":\"yield_inter_mu\",\"type\":{\"name\":\"real\"},\"block\":\"generated_quantities\"},{\"name\":\"yield_slope_mu\",\"type\":{\"name\":\"real\"},\"block\":\"generated_quantities\"}]";
     return s__.str();
     } // get_unconstrained_sizedtypes() 
     

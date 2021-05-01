@@ -14,57 +14,70 @@ data {
     vector<lower=0>[N_yield] yield_rel_areas; 
 }
 
-parameters { 
-    // Calibration parameters
-    real<lower=0> calib_slope;
-    real<lower=0> calib_inter;
-    real<lower=0> calib_sigma;
-
-    // Hyperparameters
-    real<lower=0> yield_inter_mu;
-    real<lower=0> yield_inter_sigma;
-    real yield_slope_mu;
-    real<lower=0> yield_slope_sigma;
-    
-    // Low level parameters
-    vector[J] yield_inter;
-    vector[J] yield_slope;
-
-    // Homoscedastic error
-    real<lower=0> yield_sigma; 
+transformed data {
+    vector[N_calib] centered_conc = (calib_conc - mean(calib_conc)) / sd(calib_conc);
+    vector[N_calib] centered_rel_area = (calib_rel_areas - mean(calib_rel_areas)) / sd(calib_rel_areas);
 }
 
+parameters { 
+    // Calibration parameters
+    real calib_slope_cent;
+    real calib_inter_cent;
+    real<lower=0> calib_sigma_cent;
 
-model {
-    // Calculate the concentrations given the calibration inference
-    vector[N_yield] yield_concs = (yield_rel_areas - calib_inter) / calib_slope;
-
-    // Calibration priors
-    calib_inter ~ std_normal();
-    calib_slope ~ std_normal();
-    calib_sigma ~ std_normal();
-
-    // Hyper parameters
-    yield_inter_mu ~ std_normal();
-    yield_slope_mu ~ std_normal();
-    yield_inter_sigma ~ normal(0, 0.1);
-    yield_slope_sigma ~ normal(0, 0.1);
-
-    // Low-level priors
-    yield_inter ~ normal(yield_inter_mu, yield_inter_sigma);
-    yield_slope ~ normal(yield_slope_mu, yield_slope_sigma);
+    // Hyperparameters
+    real<lower=0> yield_inter_area_mu;
+    real<lower=0> yield_inter_area_sigma;
+    real yield_slope_area_mu;
+    real<lower=0> yield_slope_area_sigma;
+    
+    // Low level parameters
+    vector[J] yield_inter_area;
+    vector[J] yield_slope_area;
 
     // Homoscedastic error
-    yield_sigma ~ std_normal();
+    real<lower=0> yield_area_sigma; 
+}
+
+transformed parameters { 
+    real calib_slope = calib_slope_cent * sd(calib_rel_areas)/sd(calib_conc);
+    real calib_inter = sd(calib_rel_areas) * (calib_inter_cent - calib_slope_cent * mean(calib_conc) / sd(calib_conc)) + mean(calib_rel_areas);
+    real calib_sigma = sd(calib_rel_areas) * calib_sigma_cent;
+}
+
+model {
+
+    // Calibration priors
+    calib_inter_cent ~ std_normal();
+    calib_slope_cent ~ std_normal();
+    calib_sigma_cent ~ std_normal();
+
+    // Hyper parameters
+    yield_inter_area_mu ~ std_normal();
+    yield_slope_area_mu ~ std_normal();
+    yield_inter_area_sigma ~ normal(0, 0.1);
+    yield_slope_area_sigma ~ normal(0, 0.1);
+
+    // Low-level priors
+    yield_inter_area ~ normal(yield_inter_area_mu, yield_inter_area_sigma);
+    yield_slope_area ~ normal(yield_slope_area_mu, yield_slope_area_sigma);
+
+    // Homoscedastic error
+    yield_area_sigma ~ std_normal();
 
     // Calibration likelihood
-    calib_rel_areas ~ normal(calib_slope * calib_conc + calib_inter, calib_sigma);
+    centered_rel_area ~ normal(calib_slope_cent * centered_conc + calib_inter_cent, calib_sigma_cent);
 
     // Yield likelihood
-    yield_concs ~ normal(yield_slope[idx] .* optical_density + yield_inter[idx], yield_sigma);
+    yield_rel_areas ~ normal(yield_slope_area[idx] .* optical_density + yield_inter_area[idx], yield_area_sigma);
 }
 
 generated quantities {
     // Compute the concentration for easy accesssion    
     vector[N_yield] yield_concs = (yield_rel_areas - calib_inter) / calib_slope;
+    vector[J] yield_inter = (yield_inter_area - calib_inter) / calib_slope;
+    vector[J] yield_slope = (yield_slope_area - calib_inter) / calib_slope;
+    real yield_inter_mu = (yield_inter_area_mu - calib_inter) / calib_slope;
+    real yield_slope_mu = (yield_slope_area_mu - calib_inter) / calib_slope;
+
 }
