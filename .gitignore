@@ -1,0 +1,11 @@
+*.swp
+*.bbl
+*.log
+*.aux
+*.tmp
+*pycache*
+*.egg-info
+*checkpoints*
+data/collated_turnover_concentration_MCMC_samples.csv
+*.DS_*tore 
+*.tif*
