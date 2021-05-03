@@ -17,6 +17,7 @@ concs = pd.read_csv('../../data/collated_turnover_concentration_MCMC_summary.csv
 calib_percs = pd.read_csv('../../data/collated_turnover_calibration_MCMC_percentiles.csv')
 turn_percs = pd.read_csv('../../data/collated_turnover_yield_MCMC_percentiles.csv')
 params = pd.read_csv('../../data/collated_turnover_parameter_MCMC_samples.csv')
+summary = pd.read_csv('../../data/collated_turnover_parameter_MCMC_summary.csv')
 
 #%%
 calib_data_base = alt.Chart(calib)
@@ -40,45 +41,87 @@ perc_plot = alt.Chart(_percs).mark_area(color=colors['primary_black']).encode(
 )
 (perc_plot + calib_points).interactive()
 # %%
-g = ['glucose', 'glucose']
-ac_data = concs[(concs['carbon_source']==g[0]) & 
-                (concs['compound_turnover']==g[1])]
-_turn = turn_percs[(turn_percs['carbon_source']==g[0]) & 
-                    (turn_percs['compound_turnover']==g[1]) &
-                   (turn_percs['level']=='hyperparameter')]
-_params = params[(params['carbon_source']==g[0]) & 
-                 (params['compound_turnover']==g[1])]
-yield_slope = _params[(_params['parameter']=='yield_slope')]
-yield_inter = _params[(_params['parameter']=='yield_inter')]
+for g, _ in data.groupby(['carbon_source', 'compound']):
 
-# Set up the yield plot
-conc_base = alt.Chart(ac_data)
-points = conc_base.mark_point(size=80, color=colors['primary_black']).encode(
-            x=alt.X('od_600nm:Q', title='optical density [a.u.]',
-                     scale=alt.Scale(zero=False)),
-            y=alt.Y('mean_val_mM:Q', title=f'{g[1]} concentration [mM]',
-                     scale=alt.Scale(zero=False)),
-            shape=alt.Shape('replicate:N', title='replicate'),
-)
-errors = conc_base.mark_errorbar(color=colors['primary_black']).encode(
-        x=alt.X('od_600nm:Q', title='optical density [a.u.]'),
-        y=alt.Y('ci_95th_lower_mM:Q', title=f'{g[1]} concentration [mM]'),
-        y2='ci_95th_upper_mM:Q',
-)
+        # Get the parameter summary
+        _summary = summary[(summary['carbon_source']==g[0]) & 
+                           (summary['compound_turnover'] == g[1]) &
+                           (summary['level']=='hyperparameter') & 
+                           (summary['parameter']=='yield_slope')]
 
-percs = alt.Chart(_turn).mark_area(opacity=0.45).encode(
-        x=alt.X('od_600nm:Q', title='optical density [a.u.]'),
-        y=alt.Y('conc_lower_mM:Q', title=f'{g[1]} concentration [mM]'),
-        y2='conc_upper_mM:Q',
-        color=alt.Color('percentile:N', sort='descending',
-                        scale=alt.Scale(scheme='blues')))
+        # Define the plot title
+        mean_val = np.abs(_summary['mean_val'].values[0])
+        ci_95_low, ci_95_up = np.sort(np.abs(np.array(
+                                        [_summary['ci_95th_upper'].values[0], 
+                                        _summary['ci_95th_lower'].values[0]])))
+        ci_95_up = np.abs(ci_95_up) - mean_val
+        ci_95_low = mean_val - np.abs(ci_95_low)
+        title = f'{g[0]} growth, {g[1]} yield = {mean_val:0.0f} [+{ci_95_up:0.0f}, -{ci_95_low:0.0f}] mM / OD'
+        _data = concs[(concs['carbon_source']==g[0]) & 
+                        (concs['compound_turnover']==g[1])]
+        _turn = turn_percs[(turn_percs['carbon_source']==g[0]) & 
+                            (turn_percs['compound_turnover']==g[1]) &
+                           (turn_percs['level']=='hyperparameter')]
+        _params = params[(params['carbon_source']==g[0]) & 
+                         (params['compound_turnover']==g[1])]
+        yield_slope = _params[(_params['parameter']=='yield_slope')]
+        yield_inter = _params[(_params['parameter']=='yield_inter')]
 
-# Plot the stripplots
-slope_reps =  alt.Chart(yield_slope).mark_tick(opacity=0.1).encode(
-                    x=alt.X('value:Q', title=f' {g[1]} yield coefficient [mM / OD]'),
-                    y=alt.Y('level:N', title=None)
-).properties(height=100, width=200)
+        # Set up the yield plot
+        conc_base = alt.Chart(_data, height=250)
+        points = conc_base.mark_point(size=80, color=colors['primary_black']).encode(
+                    x=alt.X('od_600nm:Q', title='optical density [a.u.]',
+                             scale=alt.Scale(zero=False)),
+                    y=alt.Y('mean_val_mM:Q', title=f'{g[1]} concentration [mM]',
+                             scale=alt.Scale(zero=False)),
+                    shape=alt.Shape('replicate:N', title='replicate'),
+        )
+        errors = conc_base.mark_errorbar(color=colors['primary_black']).encode(
+                x=alt.X('od_600nm:Q', title='optical density [a.u.]'),
+                y=alt.Y('ci_95th_lower_mM:Q', title=f'{g[1]} concentration [mM]'),
+                y2='ci_95th_upper_mM:Q',
+        )
+
+        percs = alt.Chart(_turn).mark_area(opacity=0.45).encode(
+                x=alt.X('od_600nm:Q', title='optical density [a.u.]'),
+                y=alt.Y('conc_lower_mM:Q', title=f'{g[1]} concentration [mM]'),
+                y2='conc_upper_mM:Q',
+                color=alt.Color('percentile:N', sort='descending',
+                                scale=alt.Scale(scheme='blues')))
+
+        # Plot the stripplots
+        slope_reps =  alt.Chart(yield_slope
+                               ).mark_tick(
+                                  opacity=0.4, 
+                                  thickness=0.01
+                               ).encode(
+                                  x=alt.X('value:Q', title=f' {g[1]} yield coefficient [mM / OD]',
+                                    scale=alt.Scale(zero=False)),
+                                  y=alt.Y('level:N', title=None)
+                                ).properties(
+                                  height=100, 
+                                  width=200)
+        int_reps =  alt.Chart(yield_inter
+                             ).mark_tick(
+                                opacity=0.4, 
+                                thickness=0.01
+                            ).encode(
+                                x=alt.X('value:Q', title=f' {g[1]} intercept [mM]',
+                                     scale=alt.Scale(zero=False)),
+                                y=alt.Y('level:N', title=None)
+        ).properties(height=100, width=200)
+
+
+        yield_plot = (percs + errors + points).resolve_scale(
+                                        color='independent'
+                                        ).properties(
+                                                title=title
+                                        )
+        rep_plot = slope_reps & int_reps
+        out = rep_plot | yield_plot
+        save(out, f'../../figures/inferred_REL606_{g[0]}_growth_{g[1]}_turnover.pdf')
+
 
 # (percs + errors + points).resolve_scale(color='independent')
-slope_reps
+
 # %%

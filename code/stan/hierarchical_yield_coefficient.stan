@@ -26,7 +26,7 @@ parameters {
     real<lower=0> calib_sigma_cent;
 
     // Hyperparameters
-    real<lower=0> yield_inter_area_mu;
+    real yield_inter_area_mu;
     real<lower=0> yield_inter_area_sigma;
     real yield_slope_area_mu;
     real<lower=0> yield_slope_area_sigma;

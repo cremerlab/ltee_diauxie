@@ -62,7 +62,7 @@ static const std::vector<string> locations_array__ = {" (found before start of p
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 24, column 4 to column 26)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 25, column 4 to column 26)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 26, column 4 to column 35)",
-                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 29, column 4 to column 38)",
+                                                      " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 29, column 4 to column 29)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 30, column 4 to column 41)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 31, column 4 to column 29)",
                                                       " (in '/Users/gchure/Dropbox/git/postdoc_projects/ltee_diauxie/code/stan/hierarchical_yield_coefficient.stan', line 32, column 4 to column 41)",
@@ -432,15 +432,6 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       current_statement__ = 4;
       yield_inter_area_mu = in__.scalar();
-      current_statement__ = 4;
-      if (jacobian__) {
-        current_statement__ = 4;
-        yield_inter_area_mu = stan::math::lb_constrain(yield_inter_area_mu,
-                                0, lp__);
-      } else {
-        current_statement__ = 4;
-        yield_inter_area_mu = stan::math::lb_constrain(yield_inter_area_mu, 0);
-      }
       local_scalar_t__ yield_inter_area_sigma;
       yield_inter_area_sigma = DUMMY_VAR__;
       
@@ -615,8 +606,6 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       current_statement__ = 4;
       yield_inter_area_mu = in__.scalar();
-      current_statement__ = 4;
-      yield_inter_area_mu = stan::math::lb_constrain(yield_inter_area_mu, 0);
       double yield_inter_area_sigma;
       yield_inter_area_sigma = std::numeric_limits<double>::quiet_NaN();
       
@@ -787,11 +776,6 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       
       current_statement__ = 4;
       yield_inter_area_mu = context__.vals_r("yield_inter_area_mu")[(1 - 1)];
-      double yield_inter_area_mu_free__;
-      yield_inter_area_mu_free__ = std::numeric_limits<double>::quiet_NaN();
-      
-      current_statement__ = 4;
-      yield_inter_area_mu_free__ = stan::math::lb_free(yield_inter_area_mu, 0);
       double yield_inter_area_sigma;
       yield_inter_area_sigma = std::numeric_limits<double>::quiet_NaN();
       
@@ -878,7 +862,7 @@ class hierarchical_yield_coefficient_model final : public model_base_crtp<hierar
       vars__.emplace_back(calib_slope_cent);
       vars__.emplace_back(calib_inter_cent);
       vars__.emplace_back(calib_sigma_cent_free__);
-      vars__.emplace_back(yield_inter_area_mu_free__);
+      vars__.emplace_back(yield_inter_area_mu);
       vars__.emplace_back(yield_inter_area_sigma_free__);
       vars__.emplace_back(yield_slope_area_mu);
       vars__.emplace_back(yield_slope_area_sigma_free__);

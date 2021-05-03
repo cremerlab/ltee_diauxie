@@ -57,11 +57,20 @@ for g, d in turnover.groupby(['carbon_source', 'compound']):
     samps = samps.posterior.to_dataframe().reset_index()
 
     # Tidy low-level parameters
-    params = samps[['yield_inter_dim_0', 'yield_inter', 'yield_slope']]
-    params.drop_duplicates(inplace=True)
-    params = params.melt('yield_inter_dim_0', var_name='parameter')
-    params.rename(columns={'yield_inter_dim_0':'level'}, inplace=True)
-    params['level'] = [f'replicate {i+1}' for i in params['level'].values]
+    _samps = samps[['yield_inter_dim_0', 'yield_slope_dim_0', 'yield_inter', 'yield_slope']]
+    _samps.drop_duplicates(inplace=True)
+    pairs = [['yield_inter_dim_0', 'yield_inter'],
+             ['yield_slope_dim_0', 'yield_slope']]
+    dfs = [] 
+    for p in pairs:
+        _params = _samps[p]
+        _df = pd.DataFrame([])        
+        _df['value'] = _params[p[1]]
+        _df['parameter'] = p[1]
+        _df['level'] = [f'replicate {v+1}' for v in _params[p[0]].values]
+        dfs.append(_df)
+    params = pd.concat(dfs)
+    # params.drop_duplicates(inplace=True)
 
     # Tidy the hyper parameters
     hyperparams = samps[['yield_inter_mu',  'yield_slope_mu']]
@@ -86,7 +95,7 @@ for g, d in turnover.groupby(['carbon_source', 'compound']):
 
     # Tidy the concentration samples
     yield_concs = samps[['yield_concs_dim_0', 'yield_concs']]
-    yield_concs.drop_duplicates(inplace=True)
+    # yield_concs.drop_duplicates(inplace=True)
 
     # Map the dimension to the od 
     yield_concs['od_600nm'] = [data_dict['optical_density'][i] for i in yield_concs['yield_concs_dim_0'].values]
